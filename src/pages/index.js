@@ -31,7 +31,7 @@ export default function Home() {
     return await web5.dwn.protocols.query({
       message: {
         filter: {
-          protocol: "https://example.com/late",
+          protocol: "https://blackgirlbytes.dev/burn-book-finale",
         },
       },
     });
@@ -43,7 +43,7 @@ export default function Home() {
       from: did,
       message: {
         filter: {
-          protocol: "https://example.com/late",
+          protocol: "https://blackgirlbytes.dev/burn-book-finale",
         },
       },
     });
@@ -88,7 +88,7 @@ export default function Home() {
 
   const defineNewProtocol = () => {
     return {
-      protocol: "https://example.com/late",
+      protocol: "https://blackgirlbytes.dev/burn-book-finale",
       published: true,
       types: {
         secretMessage: {
@@ -246,7 +246,7 @@ export default function Home() {
         from: myDid,
         message: {
           filter: {
-            protocol: "https://example.com/late",
+            protocol: "https://blackgirlbytes.dev/burn-book-finale",
             schema: "https://example.com/directMessageSchema",
           },
         },
@@ -279,7 +279,7 @@ export default function Home() {
       const response = await web5.dwn.records.query({
         message: {
           filter: {
-            protocol: "https://example.com/late",
+            protocol: "https://blackgirlbytes.dev/burn-book-finale",
           },
         },
       });
