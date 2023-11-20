@@ -111,7 +111,6 @@ export default function Home() {
           $actions: [
             { who: "author", of: "directMessage", can: "read" },
             { who: "recipient", of: "directMessage", can: "read" },
-            { who: "author", of: "directMessage", can: "delete" },
             { who: "anyone", can: "write" },
           ],
         },
@@ -167,14 +166,6 @@ export default function Home() {
       console.error('Error writing direct message to DWN', error);
     }
   };
-
-  const processResponse = (response) => {
-    return response.records.map(record => {
-      const data = record.data.json();
-      return { ...data, recordId: record.id };
-    });
-  };
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
