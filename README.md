@@ -1,3 +1,5 @@
+[![Edit blackgirlbytes/burn-book-mean-girls/main](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/blackgirlbytes/burn-book-mean-girls/main?import=true&embed=1&file=%2FREADME.md)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
