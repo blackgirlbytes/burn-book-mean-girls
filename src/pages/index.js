@@ -103,15 +103,15 @@ export default function Home() {
       structure: {
         secretMessage: {
           $actions: [
-            { who: "anyone", can: "write" },
-            { who: "author", of: "secretMessage", can: "read" },
+            { who: "anyone", can: ["create"] },
+            { who: "author", of: "secretMessage", can: ["read"] },
           ],
         },
         directMessage: {
           $actions: [
-            { who: "author", of: "directMessage", can: "read" },
-            { who: "recipient", of: "directMessage", can: "read" },
-            { who: "anyone", can: "write" },
+            { who: "author", of: "directMessage", can: ["read"] },
+            { who: "recipient", of: "directMessage", can: ["read"] },
+            { who: "anyone", can: ["create"] },
           ],
         },
       },
@@ -179,10 +179,10 @@ export default function Home() {
 
       if (messageType === 'Direct') {
         console.log('Sending direct message...');
-        messageObj = constructDirectMessage(recipientDid); 
-        record = await writeToDwnDirectMessage(messageObj); 
+        messageObj = constructDirectMessage(recipientDid);
+        record = await writeToDwnDirectMessage(messageObj);
       } else {
-        messageObj = constructSecretMessage(); 
+        messageObj = constructSecretMessage();
         record = await writeToDwnSecretMessage(messageObj);
       }
 
@@ -208,12 +208,12 @@ export default function Home() {
     const currentTime = new Date().toLocaleTimeString();
 
     return {
-      text: message, 
+      text: message,
       timestamp: `${currentDate} ${currentTime}`,
-      sender: myDid, 
-      type: 'Direct', 
+      sender: myDid,
+      type: 'Direct',
       recipientDid: recipientDid,
-      imageUrl: imageUrl, 
+      imageUrl: imageUrl,
     };
   };
 
@@ -222,11 +222,11 @@ export default function Home() {
     const currentTime = new Date().toLocaleTimeString();
 
     return {
-      text: message, 
+      text: message,
       timestamp: `${currentDate} ${currentTime}`,
-      sender: myDid, 
+      sender: myDid,
       type: 'Secret',
-      imageUrl: imageUrl, 
+      imageUrl: imageUrl,
     };
   };
 
@@ -248,8 +248,8 @@ export default function Home() {
           response.records.map(async (record) => {
             const data = await record.data.json();
             return {
-              ...data, 
-              recordId: record.id 
+              ...data,
+              recordId: record.id
             };
           })
         );
@@ -280,8 +280,8 @@ export default function Home() {
           response.records.map(async (record) => {
             const data = await record.data.json();
             return {
-              ...data, 
-              recordId: record.id 
+              ...data,
+              recordId: record.id
             };
           })
         );
