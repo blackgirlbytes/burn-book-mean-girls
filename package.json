@@ -16,6 +16,7 @@
     "process": "^0.11.10",
     "react": "^18",
     "react-dom": "^18",
-    "stream-browserify": "^3.0.0"
+    "stream-browserify": "^3.0.0",
+    "webpack": "^5.92.1"
   }
 }
